@@ -22,4 +22,7 @@ async function bootstrap() {
   console.log(`Application running on port ${port}`);
 }
 
-bootstrap();
+bootstrap().catch((error: unknown) => {
+  console.error('Application startup failed:', error);
+  process.exit(1);
+});
